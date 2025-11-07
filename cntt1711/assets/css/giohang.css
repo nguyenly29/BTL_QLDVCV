@@ -1,0 +1,116 @@
+/* ====== GIỎ HÀNG ====== */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #fff, #f6f8fa);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #ff6600;
+  margin-bottom: 30px;
+}
+
+.alert {
+  background: #e6f7ff;
+  color: #007acc;
+  border-left: 5px solid #00aaff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Bảng giỏ hàng */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.cart-table th {
+  background: #ff6600;
+  color: white;
+  text-align: left;
+  padding: 12px;
+}
+
+.cart-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table tr:hover {
+  background: #f9f9f9;
+}
+
+.price {
+  font-weight: 600;
+  color: #ff4500;
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 40px 0;
+}
+
+/* Nút xóa */
+.btn-remove {
+  display: inline-block;
+  color: #ff4500;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.btn-remove:hover {
+  color: #cc0000;
+}
+
+/* Tổng cộng và nút thanh toán */
+.cart-summary {
+  text-align: right;
+  padding-top: 15px;
+  border-top: 2px solid #eee;
+}
+
+.cart-summary h2 {
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.cart-summary span {
+  color: #ff6600;
+  font-weight: bold;
+}
+
+.btn-checkout {
+  background: linear-gradient(135deg, #ff7f50, #ff4500);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s ease;
+}
+
+.btn-checkout:hover {
+  background: linear-gradient(135deg, #ff6347, #ff2e00);
+  transform: scale(1.03);
+}

@@ -1,0 +1,368 @@
+/* === TOÀN BỘ CSS CHO admin_style.css === */
+
+/* Import Font Roboto từ Google */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Cài đặt chung */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7f6; /* Nền xám rất nhạt */
+    display: flex;
+    height: 100vh;
+    color: #333;
+}
+
+/* --- 1. SIDEBAR (Menu trái) - PHIÊN BẢN SINH ĐỘNG --- */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, #1d2b3a, #2c3e50);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.sidebar h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #ecf0f1;
+    font-weight: 700;
+}
+.sidebar nav {
+    flex-grow: 1;
+}
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    color: #bdc3c7;
+    text-decoration: none;
+    padding: 13px 18px;
+    margin: 6px 0;
+    border-radius: 8px;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-out;
+}
+.sidebar nav a i {
+    margin-right: 12px;
+    width: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.sidebar nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.sidebar nav a:hover i {
+    transform: scale(1.1);
+    color: #fff;
+}
+.sidebar nav a.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    border-left: 4px solid #fff;
+    padding-left: 14px;
+}
+.sidebar nav a.active i {
+    color: #fff;
+    transform: scale(1.1);
+}
+.sidebar .logout {
+    margin-top: auto;
+}
+.sidebar .logout a {
+    background-color: #e74c3c;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.sidebar .logout a:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- 2. MAIN CONTENT (Nội dung chính) --- */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* Header (chào mừng) - BIẾN THÀNH THẺ NỔI */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Thiết kế thẻ */
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06); /* Bóng đổ tinh tế */
+}
+.header h1 {
+    margin: 0;
+    color: #1d2b3a;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+.header .user-info {
+    font-size: 1.1em;
+    color: #555;
+}
+.header .user-info strong {
+    color: #007bff;
+}
+
+/* --- 3. BẢNG (Table) - THIẾT KẾ HIỆN ĐẠI --- */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: white;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06); /* Đồng bộ bóng đổ */
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+}
+.admin-table th, 
+.admin-table td {
+    padding: 15px 18px;
+    text-align: left;
+    vertical-align: middle;
+}
+.admin-table th {
+    background-color: #f8f9fa;
+    color: #555;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e0e0e0;
+}
+.admin-table td {
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+}
+.admin-table th, .admin-table td {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+.admin-table tr:hover {
+    background-color: #f5f5f5;
+}
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- 4. FORM (Trang Quản lý Trò chơi) --- */
+.form-container {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06); /* Đồng bộ bóng đổ */
+    margin-bottom: 30px;
+}
+.form-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1d2b3a;
+}
+.form-group { margin-bottom: 18px; }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+.form-group input[type="text"],
+.form-group input[type="password"], /* <-- THÊM DÒNG NÀY */
+.form-group input[type="time"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+    outline: none;
+}
+.form-group textarea { min-height: 80px; resize: vertical; }
+.form-row { display: flex; gap: 20px; }
+.form-row .form-group { flex: 1; }
+.form-buttons { display: flex; gap: 10px; align-items: center; margin-top: 10px; }
+.form-buttons button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.form-buttons button[name="edit_game"] {
+    background-color: #f39c12;
+}
+.form-buttons button:hover {
+    filter: brightness(110%);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.form-buttons button:active {
+    transform: scale(0.98);
+}
+.form-buttons a {
+    color: #555;
+    text-decoration: none;
+    padding: 10px;
+}
+.form-buttons a:hover { text-decoration: underline; }
+
+
+/* --- 5. CÁC THẺ TRẠNG THÁI (Badge/Pill) --- */
+.status,
+.status-active, .status-locked,
+.role-admin, .role-user {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.status-active { background-color: #e6f7ec; color: #1e8e3e; }
+.status-locked { background-color: #fbe9e7; color: #c91a00; }
+.role-admin   { background-color: #e1f5fe; color: #0277bd; }
+.role-user    { background-color: #f3e5f5; color: #6a1b9a; }
+.status-completed { background-color: #28a745; color: white; }
+.status-ordered { background-color: #ffc107; color: #333; }
+.status-cancelled { background-color: #dc3545; color: white; }
+.status-pending { background-color: #6c757d; color: white; }
+
+
+/* --- 6. LINK HÀNH ĐỘNG (trong bảng) --- */
+.action-links a {
+    text-decoration: none;
+    margin-right: 12px;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+.action-links a:hover {
+    text-decoration: none;
+    background-color: #eee;
+}
+.action-links a.action-lock { color: #dc3545; }
+.action-links a.action-lock:hover { background-color: #fbe9e7; }
+.action-links a.action-unlock { color: #28a745; }
+.action-links a.action-unlock:hover { background-color: #e6f7ec; }
+.action-links a.action-promote { color: #f39c12; }
+.action-links a.action-promote:hover { background-color: #fff8e1; }
+.action-links a.action-delete { color: #e74c3c; font-weight: bold; }
+.action-links a.action-delete:hover { background-color: #fbe9e7; }
+.action-links a.action-edit { color: #007bff; }
+.action-links a.action-edit:hover { background-color: #e1f5fe; }
+.action-links a.action-approve { color: #28a745; font-weight: bold; }
+.action-links a.action-cancel { color: #dc3545; }
+.action-links .self-note,
+.action-links .note { 
+    font-style: italic; color: #999; 
+    font-size: 0.9em;
+}
+
+/* --- 7. THÔNG BÁO (Message) --- */
+.message {
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    background-color: #e6f7ec;
+    color: #1e8e3e;
+    border: 1px solid #b7e1c7;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.message.error {
+    background-color: #fbe9e7;
+    color: #c91a00;
+    border: 1px solid #f6c6c0;
+}
+
+/* --- 8. DASHBOARD STATS BOXES --- */
+.stat-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+.stat-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+.stat-box .icon {
+    font-size: 3.2em;
+    margin-right: 20px;
+    width: 60px;
+}
+.stat-box .info h3 {
+    margin: 0 0 8px 0;
+    color: #888;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.stat-box .info span {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #333;
+}
+.stat-box .icon-users { color: #3498db; }
+.stat-box .icon-games { color: #e67e22; }
+.stat-box .icon-orders { color: #2ecc71; }
+.stat-box .icon-services { color: #9b59b6; }
+/* === 9. NÚT TÙY CHỈNH CHO FORM === */
+
+/* Nút "Tạo tài khoản" (màu xanh lá) */
+.form-buttons button[name="create_user"] {
+    background-color: #28a745;
+}
+.form-buttons button[name="create_user"]:hover {
+    background-color: #218838;
+}

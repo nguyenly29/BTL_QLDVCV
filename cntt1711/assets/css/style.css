@@ -1,0 +1,848 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: "Poppins", sans-serif;
+    }
+    body {
+        background-color: #f8f9fa;
+    }
+    
+
+/* Header tổng thể */
+header {
+  background: linear-gradient(to right, #f9f7f2, #b68c3a);
+  color: #333;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+/* Logo */
+.logo h5 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #3e3e3e; 
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.logo h5:hover {
+  color: #3e3e3e; 
+  transform: scale(1.05);
+}
+
+/* Menu */
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #4a4a4a; /* xám sang trọng */
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: #d4af37; /* vàng ánh kim */
+  transition: width 0.3s ease;
+}
+
+.menu ul li a:hover {
+  color: #b68c3a;
+}
+
+.menu ul li a:hover::after {
+  width: 100%;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .menu ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+}
+    /* Banner styles */
+    .banner {
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+    }
+    .slide {
+        position: relative;
+        height: 100%;
+        background: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat;
+        animation: slideShow 20s infinite;
+    }
+    @keyframes slideShow {
+        0%, 100% {
+            background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80&w=2070');
+        }
+        33% {
+            background-image: url('https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&q=80&w=2070');
+        }
+        66% {
+            background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80&w=2070');
+        }
+    }
+    .content-banner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 1;
+        width: 80%;
+    }
+    .content-banner h3 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .content-banner p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    .banner-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #5c6bc0;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+    .banner-button:hover {
+        background-color: #3f51b5;
+        transform: scale(1.05);
+    }
+    .slide::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.4);
+    }
+    .search-container {
+        position: relative;
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 0px;
+        z-index: 2;
+    }
+    .search-box {
+        display: flex;
+        background: white;
+        border-radius: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+        padding: 5px;
+    }
+    .search-input {
+        flex: 1;
+        border: none;
+        padding: 15px 20px;
+        font-size: 16px;
+        outline: none;
+        color: #333;
+        background: transparent;
+    }
+    .search-input::placeholder {
+        color: #999;
+    }
+    .search-button {
+        background: #5c6bc0;
+        border: none;
+        color: white;
+        padding: 15px 35px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+    .search-button:hover {
+        background: #3f51b5;
+        transform: translateX(3px);
+    }
+    .search-suggestions {
+        position: absolute;
+        top: 100%;
+        left: 20px;
+        right: 20px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        margin-top: 5px;
+        padding: 10px 0;
+        display: none;
+    }
+    .suggestion-item {
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .suggestion-item:hover {
+        background: #f0f3ff;
+        color: #5c6bc0;
+    }
+
+        /* List content styles */
+    .list-content {
+        max-width: 1100px;
+        margin: 40px auto 80px;
+        padding: 0 20px;
+    }
+    .list-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+    }
+    .list-header h2 {
+        color: #ff9800;
+        font-size: 1.6em;
+        letter-spacing: 0.5px;
+    }
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 18px;
+    }
+    .card {
+        background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(25, 39, 89, 0.06);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 28px rgba(25, 39, 89, 0.12);
+    }
+    .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        display: block;
+    }
+    /* Chữ trong ảnh */
+    .image-text {
+        padding: 10px;
+        text-align:center;
+    }
+
+
+    @media (max-width: 900px) {
+        .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+        .card-grid { grid-template-columns: 1fr; }
+        .search-container { margin-top: -20px; }
+    }
+
+    /* Footer Styles */
+    .footer {
+        background: linear-gradient(to right, #2c3e50, #34495e);
+        color: #fff;
+        padding: 60px 0 20px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .footer-column h3 {
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .footer-column p {
+        line-height: 1.6;
+        color: #bdc3c7;
+    }
+
+    .social-links {
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background: rgba(255, 255, 255, 0.1);
+        margin-right: 10px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 35px;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+        background: #e74c3c;
+        transform: translateY(-3px);
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: #bdc3c7;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: #e74c3c;
+    }
+
+    .contact-info {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        color: #bdc3c7;
+    }
+
+    .contact-info i {
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom p {
+        color: #bdc3c7;
+        font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+        .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+        }
+        .footer-column {
+            text-align: center;
+        }
+        .contact-info {
+            justify-content: center;
+        }
+        .social-links {
+            text-align: center;
+        }
+    }
+
+    .news-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.news-header h2 {
+  color: #f57c00;
+  font-size: 1.8em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.news-container {
+  display: flex;
+  gap: 24px;
+}
+
+/* Tin nổi bật bên trái */
+.news-featured {
+  flex: 2;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  padding-bottom: 16px;
+}
+
+.news-featured img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.news-featured h3 {
+  font-size: 1.2em;
+  margin: 12px 16px 4px;
+  color: #222;
+}
+
+.news-featured .news-meta {
+  color: #ff9800;
+  font-size: 0.9em;
+  margin: 0 16px 10px;
+}
+
+.news-featured p {
+  color: #555;
+  margin: 0 16px;
+  line-height: 1.5;
+}
+
+/* Danh sách tin bên phải */
+.news-list {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-item {
+  display: flex;
+  gap: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-4px);
+}
+
+.news-item img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.news-info {
+  padding: 6px 8px;
+}
+
+.news-info h4 {
+  font-size: 0.95em;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.news-info .news-meta {
+  font-size: 0.8em;
+  color: #ff9800;
+  margin-bottom: 6px;
+}
+
+.news-info p {
+  font-size: 0.85em;
+  color: #555;
+  line-height: 1.4;
+}
+
+.why-choose {
+  background: linear-gradient(135deg, #f8fbff, #fff);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.why-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-choose h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.why-choose h2 span {
+  color: #b68c3a; /* vàng sang trọng */
+}
+
+.why-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.why-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.why-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.why-item i {
+  font-size: 2em;
+  color: #b68c3a;
+  margin-bottom: 10px;
+}
+
+.why-item h4 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.why-item p {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .why-item {
+    width: 90%;
+  }
+}
+
+
+/* Deal Hot Section */
+.deal_hot {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.deal_hot h2 {
+    color: #ff9800;
+    font-size: 1.6em;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.deal_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.deal_box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 250px; /* Hoặc bạn có thể sử dụng % cho responsive */
+}
+
+.deal_box:hover {
+    transform: translateY(-5px);
+}
+
+.deal_box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.deal_text {
+    padding: 16px;
+}
+
+.deal_text h3 {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.deal_discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff4500;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.deal_text p {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.price .current {
+    color: #ff9800;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.price .original {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9em;
+}
+
+.original_price {
+    text-decoration: line-through; /* Gạch chéo giá gốc */
+    color: #999; /* Màu xám cho giá gốc */
+}
+
+.discounted_price {
+    color: #ff4500; /* Màu đỏ cho giá đã giảm */
+    font-weight: bold; /* Đậm cho giá đã giảm */
+}
+
+.description {
+    display: block; /* Đảm bảo nó là một khối */
+    overflow: hidden; /* Ẩn văn bản vượt quá */
+    white-space: nowrap; /* Không xuống dòng */
+    text-overflow: ellipsis; /* Hiệu ứng chấm chấm */
+    max-width: 100%; /* Giới hạn chiều rộng */
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: #5c6bc0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #3f51b5;
+    transform: translateX(3px);
+}
+
+/* Responsive cho deal hot */
+@media (max-width: 1024px) {
+    .deal_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .deal_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .deal_container {
+        grid-template-columns: 1fr;
+    }
+    
+    .deal_box {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+.featured_services {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f8f9fa; /* Nền nhẹ để tách biệt phần này */
+    border-radius: 10px;
+}
+
+.services_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service_box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex: 1 1 calc(30% - 20px); /* Chiếm 30% chiều rộng */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.service_box:hover {
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+}
+
+.service_image img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.service_text {
+    padding: 15px;
+}
+
+.service_text h3 {
+    margin: 0 0 10px;
+    color: #007bff; /* Màu cho tiêu đề */
+}
+
+.service_text .description {
+    margin: 0 0 15px;
+    color: #666;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Nền modal mờ sang trọng */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 999; 
+    left: 0; top: 0;
+    width: 100%; height: 100%; 
+    background: rgba(0, 0, 0, 0.6); /* Nền tối mờ, sang trọng */
+    backdrop-filter: blur(5px); /* Hiệu ứng mờ nền */
+    transition: opacity 0.3s ease;
+}
+
+/* Hộp modal tinh tế */
+.modal-content {
+    background: linear-gradient(145deg, #ffffff, #f3f3f3); /* Gradient nhẹ nhàng */
+    margin: 5% auto;
+    padding: 30px 25px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    animation: fadeInScale 0.4s ease;
+}
+
+/* Đóng modal sang trọng */
+.close {
+    position: absolute;
+    top: 12px; right: 20px;
+    font-size: 26px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.close:hover {
+    color: #ff6b6b;
+    transform: scale(1.2);
+}
+
+/* Hiệu ứng mở modal */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+

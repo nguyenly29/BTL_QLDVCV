@@ -1,0 +1,78 @@
+/* Style form bên trong modal */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content label {
+    font-weight: 600;
+    color: #555;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+    border-color: #ff7f50;
+    box-shadow: 0 0 10px rgba(255,127,80,0.2);
+}
+
+/* Button xác nhận */
+.modal-content button {
+    background: linear-gradient(135deg, #ff7f50, #ff5e62);
+    color: white;
+    padding: 15px;
+    width: 50%;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-content button:hover {
+    background: linear-gradient(135deg, #ff5e62, #ff7f50);
+    box-shadow: 0 5px 15px rgba(255,95,98,0.4);
+}
+
+.ngay-mo-ban-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.ngay-btn {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 90px;
+    transition: all 0.3s ease;
+}
+
+.ngay-btn:hover {
+    background-color: #ff7f50;
+    color: white;
+    border-color: #ff7f50;
+}
+
+.ngay-btn .calendar-icon {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
