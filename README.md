@@ -1,4 +1,3 @@
-<img width="3693" height="3693" alt="image" src="https://github.com/user-attachments/assets/75ab88b2-b852-438b-9979-dd40c9a0daa2" />
 1. Giới thiệu
 Web Quản Lý Dịch Vụ Công Viên Giải Trí là một ứng dụng web được phát triển nhằm giúp quản lý, theo dõi và vận hành các dịch vụ công viên giải trí một cách hiệu quả và minh bạch. Hệ thống cho phép người quản trị dễ dàng thêm, sửa, xóa các dịch vụ, đồng thời cung cấp giao diện thân thiện để người dùng cuối tra cứu và sử dụng các dịch vụ công.
 2. Các công nghệ được sử dụng
